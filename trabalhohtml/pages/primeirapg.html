@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.slim.js"
+  integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+  crossorigin="anonymous"></script>
+    <?php
+    session_start();
+    ?>
+		<title>Clínica - Cadastro</title>
+		<meta charset="utf-8" />
+
+		<script type="text/javascript">
+		/* Máscaras ER */
+		function mascara(o,f){
+		    v_obj=o
+		    v_fun=f
+		    setTimeout("execmascara()",1)
+		}
+		function execmascara(){
+		    v_obj.value=v_fun(v_obj.value)
+		}
+		function mtel(v){
+		    v=v.replace(/\D/g,"");             //Remove tudo o que não é dígito
+		    v=v.replace(/^(\d{2})(\d)/g,"($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
+		    v=v.replace(/(\d)(\d{4})$/,"$1-$2");    //Coloca hífen entre o quarto e o quinto dígitos
+		    return v;
+		}
+		function id( el ){
+			return document.getElementById( el );
+		}
+		window.onload = function(){
+			id('telefone').onkeypress = function(){
+				mascara( this, mtel );
+			}
+		}
+		</script>
+			</head>
+	<body>
+		<form action="cadastro.php" method="post" name="dados" onSubmit="" id="frmEnviar" >
+  <table width="588" border="0" align="center" >
+     
+       <tr>
+      <td width="118"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Cpf:</font></td>
+      <td width="460">
+        <input name="cpf" type="text" class="formbutton" id="nome" size="52" maxlength="150" placeholder="Insira seu nome">
+      </td>
+    </tr>
+
+
+    <tr>
+      <td width="118"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Nome completo:</font></td>
+      <td width="460">
+        <input name="nome" type="text" class="formbutton" id="nome" size="52" maxlength="150" placeholder="Insira seu nome">
+      </td>
+    </tr>
+    <tr>
+      <td><font size="1" face="Verdana, Arial, Helvetica, sans-serif">E-mail:</font></td>
+      <td><font size="2">
+        <input name="email" type="text" id="tx_email" size="52" maxlength="150" class="formbutton" placeholder="Insira seu e-mail">
+      </font></td>
+    </tr>
+    <tr>
+      <td><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Endereço:</font></td>
+      <td><font size="2">
+        <input name="endereco" type="text" id="tx_endereco" size="52" maxlength="150" class="formbutton" placeholder="Insira seu Endereço">
+      </font></td>
+    </tr>
+    <tr>
+      <td><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Celular:</font></td>
+      <td><font size="2">     
+			<form>
+		    <input type="text" name="contato" id="telefone" maxlength="15" placeholder="Insira seu telefone" />
+			</form>
+			</hr>
+			      
+		</font></td>
+    </tr>
+    <tr>
+      <td><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Animal:</font></td>
+       <td><input type="text" name="animal" id="telefone" maxlength="15" placeholder="Insira seu telefone" /></td>
+    </tr>
+
+    <tr>
+      <td><font face="Verdana, Arial, Helvetica, sans-serif"><font size="1">Descrição<strong>:</strong></font></font></td>
+      <td rowspan="2"><font size="2">
+        <textarea name="descricao" cols="50" rows="8" class="formbutton" id="tx_descricao" input ></textarea>
+      </font></td>
+    </tr>
+    <tr>
+      <td height="85"><p><strong><font face="Verdana, Arial, Helvetica, sans-serif"><font size="1">
+      </font></font></strong></p></td>
+    </tr>
+
+    
+    <tr>
+      <td height="22"></td>
+      <td>
+        
+  		  <button type="button" id="salvar">Salvar</button>
+  		
+      </td>
+    </tr>
+  </table>
+</form>
+<script language="JavaScript" >
+$(document).ready(function(){
+
+  $("#salvar").click(function(){
+   var nome = $("#nome").val();
+   if(nome == null || nome ==""){
+    alert("Nome nao pode ficar vazio");
+   }
+   
+   
+$( "#salvar" ).click(function() {
+  $( "#frmEnviar" ).submit();
+});
+
+  });
+
+
+
+});
+
+  
+</script> 
+<script type="text/javascript" src=""></script>
+		<a href="../trabalho.html">Voltar</a>
+	</body>
+</html>

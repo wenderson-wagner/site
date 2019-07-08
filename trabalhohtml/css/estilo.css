@@ -1,0 +1,42 @@
+.ac_box {
+	 background-color: white;
+  width: 300px;
+  border: 2px solid black;
+  padding: 25px;
+  margin: 25px;
+  padding-bottom:50;
+}
+p{
+	font-size:21;
+}
+
+#imagem1{
+float:left;	
+
+}
+#pff{
+	float:center;
+padding-left:15;
+}
+#p1{
+	float:left;
+}
+
+#p2{
+	float:left;
+}
+
+#p3{
+	float:right;
+	padding-left:20px;
+}
+
+#p4{
+	float:right;
+	padding-left:20px;
+}
+
+#p5{
+	float:center;
+padding-left:15;
+}
